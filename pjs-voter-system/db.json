@@ -1,0 +1,33 @@
+{
+    "voters": [
+        {
+            "id": 1,
+            "voterId": 1123581321,
+            "firstName": "Bob",
+            "lastName": "Marley",
+            "address": "123 hello world",
+            "city": "Mountain View",
+            "zipcode": "94043",
+            "birthdate": "01/01/1990",
+            "email": "test@gmail.com",
+            "phone": "123-333-3211",
+            "elections": [
+                {"electionId": 1},
+                {"electionId": 2}
+            ]
+        }
+    ],
+    "elections": [
+        {
+            "id": "1",
+            "voterCount": 15,
+            "questions": [
+                {
+                    "question": "Do you like wearing pajamas?",
+                    "yes": 10,
+                    "no": 5
+                }
+            ]
+        }
+    ]
+}

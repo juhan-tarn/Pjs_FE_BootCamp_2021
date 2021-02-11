@@ -1,0 +1,90 @@
+#PJSSideBar {
+  transform: translateX(-10px);
+  transition: transform 400ms ease-in;
+
+  height: 100%;
+  width: 270px;
+  background-color: rgb(233, 233, 233);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+#PJSSideBar.slideIn {
+  transform: translateX(-0px);
+  width: 100px;
+}
+
+#PJSSideBar .l1Menu {
+  border: 1px solid purple;
+}
+
+#PJSSideBar.slideIn .l1Menu {
+  display:none;
+}
+
+#PJSSideBar.slideOut {
+  transform: translateX(0%);
+}
+
+.l1Menu ul.sidebarMenu {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  padding-left: 0px;    
+}
+
+.l1Menu li.sidebarMenuItem {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.l1Menu p {
+  font-family: "Open Sans", sans-serif;
+  color: darkblue;  
+  font-size: 20px;
+  font-weight: 800;
+  text-align: left;
+  padding: 0px 0px;
+  margin: 10px 0px;
+}
+
+.l1Menu li.sidebarMenuItem:hover {
+  background: lightgray;
+  box-shadow: inset 3px 0 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.l1Menu li.sidebarMenuItem p {
+  font-family: "Open Sans", sans-serif;
+  color: blue;  
+  font-size: 16px;
+  font-weight: 800;
+  text-align: left;
+  padding: 0px 0px;
+  margin: 10px 0px;
+}
+
+.pjsMenuLogo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 22px;
+  font-weight: 600;
+  color: purple;
+  margin: 20px 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+  background-color: rgb(233, 233, 233);  
+}
+
+.pjsMenuLogo .pjslogo{
+  height: 50px;
+  margin: 0px;
+  background-color: lightgray;
+}

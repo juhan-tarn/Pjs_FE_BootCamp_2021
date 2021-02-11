@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+
+  font-family: arial;
+  font-size: 100%;
+}
+
+.container {
+  border: 0px solid red;
+
+  position: fixed;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: grid;
+
+  grid-template-rows: 70px 1fr 40px;
+  grid-template-columns: 1fr 5fr;
+
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.container > header,
+.container > footer {
+  background-color: brown;
+  color: white;
+}
+
+.container > header {
+  grid-area: header;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container > nav {
+  grid-area: menu;
+
+  background-color: lightgray;
+  color: purple;
+  padding-left: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.container > nav > ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.container > nav > ul > li {
+  padding: 2px 6px;
+  margin: 0;
+}
+
+.container > nav > ul > li > a,
+.container > nav > ul > li > a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.container > nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+.container > main h2,
+.container > aside h2 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.container > main {
+  grid-area: content;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.container > aside {
+  grid-area: sidebar;
+  padding: 5px;
+  border: 2px solid bluew;
+}
+
+.container > footer {
+  grid-area: footer;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.container > footer > small {
+  font-size: 0.8rem;
+  /* font-size: 12.4px; */
+}
+
+button {
+  background-color: lightgray;
+  color: black;
+  font-size: 1.1rem;
+}

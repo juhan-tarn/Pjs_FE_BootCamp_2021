@@ -49,7 +49,6 @@ export const VoterForm = props => {
         <label htmlFor="address-input">Address</label>
         <input
           type="text"
-          data-type="number"
           id="address-input"
           name="address"
           value={voterForm.address}
@@ -70,7 +69,6 @@ export const VoterForm = props => {
         <label htmlFor="birthdate-input">Birthdate</label>
         <input
           type="text"
-          data-type="number"
           id="birthdate-input"
           name="birthdate"
           value={voterForm.birthdate}
@@ -81,7 +79,6 @@ export const VoterForm = props => {
         <label htmlFor="email-input">Email</label>
         <input
           type="text"
-          data-type="number"
           id="email-input"
           name="email"
           value={voterForm.email}
@@ -92,7 +89,6 @@ export const VoterForm = props => {
         <label htmlFor="phone-input">Phone</label>
         <input
           type="text"
-          data-type="number"
           id="phone-input"
           name="phone"
           value={voterForm.phone}

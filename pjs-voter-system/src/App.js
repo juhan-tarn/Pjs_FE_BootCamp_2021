@@ -9,6 +9,7 @@ import { ToolFooter } from './components/ux/ToolFooter'
 import { Sidebar } from './components/ux/Sidebar';
 
 import './App.css';
+import { AddVoterFormContainer } from './containers/AddVoterFormContainer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <aside><Sidebar></Sidebar></aside>
             <main>
               <VoterTableContainer/>
+              <AddVoterFormContainer/>
             </main>
 
           </Provider>

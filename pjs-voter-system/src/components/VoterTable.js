@@ -1,28 +1,38 @@
-export const VoterTable = ({voters}) => {
+import { useEffect } from "react";
+import {VoterViewRow} from './VoterViewRow';
+
+export const VoterTable = ({voters, onRefreshVoters, onUpdateSortField}) => {
 
 
     const voterTableItems = voters.map(
         voter => {
-            (voter.isEdit ? <VoterViewRow voter={voter} /> : <VoterViewRow voter={voter}/>);
+            return (voter.isEdit ? <VoterViewRow key={voter.id} voter={voter} /> : <VoterViewRow key={voter.id} voter={voter}/>);
         }
     );
+
+    useEffect(() => {
+        onRefreshVoters();
+    }, [onRefreshVoters]);
 
     return (
         <>
             <table>
                 <thead>
-                    <tr onClick={() => console.log('sort')}>Voter ID</tr>
-                    <tr onClick={() => console.log('sort')}>First Name</tr>
-                    <tr onClick={() => console.log('sort')}>Last Name</tr>
-                    <tr onClick={() => console.log('sort')}>Address</tr>
-                    <tr onClick={() => console.log('sort')}>City</tr>
-                    <tr onClick={() => console.log('sort')}>Zipcode</tr>
-                    <tr onClick={() => console.log('sort')}>Birth Date</tr>
-                    <tr onClick={() => console.log('sort')}>Email</tr>
-                    <tr onClick={() => console.log('sort')}>Phone</tr>
+                    <tr>
+                        <th onClick={() => onUpdateSortField('id')}>Voter ID</th>
+                        <th onClick={() => onUpdateSortField('firstName')}>First Name</th>
+                        <th onClick={() => onUpdateSortField('lastName')}>Last Name</th>
+                        <th onClick={() => onUpdateSortField('address')}>Address</th>
+                        <th onClick={() => onUpdateSortField('city')}>City</th>
+                        <th onClick={() => onUpdateSortField('zipcode')}>Zipcode</th>
+                        <th onClick={() => onUpdateSortField('birthdate')}>Birth Date</th>
+                        <th onClick={() => onUpdateSortField('email')}>Email</th>
+                        <th onClick={() => onUpdateSortField('phone')}>Phone</th>
+                    </tr>
+
                 </thead>
                 <tbody>
-
+                    {voterTableItems}
                 </tbody>
             </table>
         </>

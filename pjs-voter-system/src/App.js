@@ -7,6 +7,7 @@ import { Layout } from './components/ux/Layout'
 import { ToolHeader } from './components/ux/ToolHeader'
 import { ToolFooter } from './components/ux/ToolFooter'
 import { Sidebar } from './components/ux/Sidebar';
+import { Home } from './components/Home';
 
 import './App.css';
 import { AddVoterFormContainer } from './containers/AddVoterFormContainer';
@@ -17,16 +18,22 @@ function App() {
       <Router>
         <Layout>
           <ToolHeader headerText="PJS Voter System" />
-          <Provider store={voterToolStore}>
-
-            <aside><Sidebar></Sidebar></aside>
-            <main>
-              <VoterTableContainer/>
-              <AddVoterFormContainer/>
-            </main>
-
-          </Provider>
-
+          <aside><Sidebar></Sidebar></aside>
+          <main>
+            <Switch>
+              <Provider store={voterToolStore}>
+                <Route path="/voter-table" exact>
+                  <VoterTableContainer/>
+                </Route>
+                <Route path="/register-voter" exact>
+                  <AddVoterFormContainer/>
+                </Route>
+              </Provider>
+              <Route path="/" exact>
+                <Home/>
+              </Route>
+            </Switch>
+          </main>
           <ToolFooter footerText="PJS, Inc." />
         </Layout>
       </Router>

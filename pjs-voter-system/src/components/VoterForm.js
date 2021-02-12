@@ -10,7 +10,7 @@ const getInitVoterForm = () => ({
   address: '',
   city: '',
   address: '',
-  zip: '',
+  zipcode: '',
   birthdate: '',
   email: '',
   phone: '',
@@ -106,9 +106,9 @@ export const VoterForm = props => {
         <label htmlFor="zip-input">ZipCode</label>
         <input
           type="text"
-          id="zip-input"
-          name="zip"
-          value={voterForm.zip}
+          id="zipcode-input"
+          name="zipcode"
+          value={voterForm.zipcode}
           onChange={change}
           className={ isValidZip ? "ok" : "error"}
           onBlur={(e) => { checkValidZip(e.target.value) ? setIsValidZip(true) : setIsValidZip(false)}}

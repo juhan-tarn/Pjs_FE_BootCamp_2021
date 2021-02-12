@@ -4,7 +4,7 @@ import {
     SORT_VOTERS_ACTION,
 } from '../actions/voter-tool.actions';
 
-const votersReducer = (voters=[], action) => {
+export const votersReducer = (voters=[], action) => {
     switch (action.type) {
         case REFRESH_VOTERS_DONE_ACTION:
             return action.voters;
@@ -22,7 +22,7 @@ export const sortFieldReducer = (sortField = 'id', action) => {
 };
 
 
-export const voterToolReducer = combineReducers({
-    voters: votersReducer,
-    sortField: sortFieldReducer,
-});
+// export const voterToolReducer = combineReducers({
+//     voters: votersReducer,
+//     sortField: sortFieldReducer,
+// });

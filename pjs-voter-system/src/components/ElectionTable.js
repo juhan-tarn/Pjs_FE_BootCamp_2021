@@ -1,10 +1,20 @@
 import { useEffect } from "react";
 import { ElectionViewRow } from "./ElectionViewRow";
+import { ResultsViewRow } from "./ResultsViewRow";
 
-export const ElectionTable = ({elections, onRefreshElections}) => {
+export const ElectionTable = ({
+    resultId,
+    elections, 
+    onRefreshElections, 
+    onViewResult: viewResult}) => 
+    {
     const electionTableItems = elections.map(election => {
-        return <ElectionViewRow key={election.id} election={election} />;
+        return <ElectionViewRow key={election.id} election={election} onViewResult={viewResult} />;
     });
+    
+    const resultItems = elections.map(election => {
+        return (resultId === election.id) ? <ResultsViewRow election={election} key={election.id}/> : <></> ; 
+    })
 
     useEffect(() => {
         onRefreshElections();
@@ -24,6 +34,7 @@ export const ElectionTable = ({elections, onRefreshElections}) => {
                     {electionTableItems}
                 </tbody>
             </table>
+            {resultItems}
         </>
     );
 };

@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { votersReducer, sortFieldReducer, editVoterReducer, deleteVotersReducer } from '../reducers/voter-tool.reducers.js';
-import { electionsReducer, questionsReducer } from '../reducers/election-tool.reducers.js';
+import { electionsReducer, questionsReducer, resultsReducer } from '../reducers/election-tool.reducers.js';
 
 export const voterToolStore = createStore(
     combineReducers({
@@ -13,7 +13,8 @@ export const voterToolStore = createStore(
         selctedVoters : deleteVotersReducer,
         elections: electionsReducer,
         sortField: sortFieldReducer,
-        questions:questionsReducer
+        questions:questionsReducer,
+        resultId: resultsReducer
     }),
     composeWithDevTools(applyMiddleware(thunk)),    
     );

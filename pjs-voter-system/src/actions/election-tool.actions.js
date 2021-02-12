@@ -3,6 +3,7 @@ export const ADD_ELECTIONS_REQUEST_ACTION = 'ADD_ELECTIONS_REQUEST';
 export const REFRESH_ELECTIONS_REQUEST_ACTION = 'REFRESH_ELECTIONS_REQUEST';
 export const REFRESH_ELECTIONS_DONE_ACTION = 'REFRESH_ELECTIONS_DONE';
 export const RESET_QUESTIONS_ACTION = 'RESET_QUESTIONS';
+export const VIEW_RESULT_ACTION = 'VIEW_RESULT';
 
 export const createAddQuestionAction = (question) => ({
     type: ADD_QUESTION_ACTION,
@@ -37,6 +38,11 @@ export const createRefreshElectionsRequestAction = () => ({
 export const createRefreshElectionsDoneAction = (elections) => ({
     type: REFRESH_ELECTIONS_DONE_ACTION,
     elections,
+});
+
+export const createViewResultAction = electionId => ({
+    type: VIEW_RESULT_ACTION,
+    electionId,
 });
 
 export const refreshElections = () => {

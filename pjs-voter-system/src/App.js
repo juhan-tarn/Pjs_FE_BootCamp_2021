@@ -24,48 +24,22 @@ function App() {
           <main>
             <Switch>
               <Provider store={voterToolStore}>
-                <Route path="/" exact >
-                  <ToolHeader headerText="Elections List" />
-                  <ElectionTableContainer />
-                  <ToolHeader headerText="Add Election" />
-                  <AddElectionFormContainer />
-                </Route>
+
                 <Route path="/voter-table" exact>
                   <VoterTableContainer/>
                 </Route>
+
                 <Route path="/register-voter" exact>
                   <AddVoterFormContainer/>
                 </Route>
 
-                <Route path="/ballots-table">
-                  Hello
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Ballot ID</th>
-                              <th>Status</th>
-                              <th>Voters Count</th>
-                              <th>Number of questons</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <th>1</th>
-                              <th>Ready</th>
-                              <th>120</th>
-                              <th>5</th>
-                          </tr>
-                          <tr>
-                              <th>2</th>
-                              <th>Initial</th>
-                              <th>120</th>
-                              <th>5</th>
-                          </tr>
-                          
-                      </tbody>
-                  </table>
+                <Route path="/elections-table">
+                  <ElectionTableContainer />
                 </Route>
                 
+                <Route path="/create-election">
+                  <AddElectionFormContainer />
+                </Route>
 
                 <Route path="/capture-vote">
                   <div>

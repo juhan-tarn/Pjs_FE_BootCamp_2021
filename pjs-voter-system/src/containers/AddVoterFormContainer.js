@@ -13,5 +13,5 @@ export const AddVoterFormContainer = () => {
     useDispatch(),
   );
 
-  return <VoterForm buttonText="Add Vote" onSubmitVote={actions.onAddVote} />;
+  return <VoterForm buttonText="Submit" onSubmitVoter={actions.onAddVote} />;
 };

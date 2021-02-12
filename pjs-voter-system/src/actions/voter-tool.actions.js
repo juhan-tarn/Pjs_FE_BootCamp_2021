@@ -55,12 +55,15 @@ export const createDeSelectVoterAction = (voterId) => ( {
 })
 
 export const addVoter = voter => {
+
+    const newVoter = { ...voter, pjsNumber : "2021-" + voter.id }
+    
     return dispatch => {
         dispatch(createAddVotersRequestAction());
         return fetch('http://localhost:3060/voters', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(voter),
+            body: JSON.stringify(newVoter),
         })
         .then(() => dispatch(refreshVoters()));
     };

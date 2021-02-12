@@ -61,22 +61,13 @@ export const Sidebar = () => {
               <p>Elections</p>
               <ul className="sidebarMenu">          
                 <li className="sidebarMenuItem">
-                  <p><Link to="/ballots-table">Ballots</Link></p>
+                  <p><Link to="/elections-table">All Elections</Link></p>
                 </li>
                 <li className="sidebarMenuItem">
-                  <p>Stats</p>
+                  <p><Link to="/create-election">Create Election</Link></p>
                 </li>
                 <li className="sidebarMenuItem">
-                  <p>Create Election</p>
-                </li>
-                <li className="sidebarMenuItem">
-                  <p>Update Election</p>
-                </li>
-                <li className="sidebarMenuItem">
-                  <p>Start Election</p>
-                </li>
-                <li className="sidebarMenuItem">
-                  <p>Complete Election</p>
+                  <p><Link to="/elections-stats">Statistics</Link></p>
                 </li>
               </ul>
             </div>

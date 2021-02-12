@@ -17,7 +17,7 @@
 }
 
 #PJSSideBar .l1Menu {
-  border: 1px solid purple;
+  border: 0px solid purple;
 }
 
 #PJSSideBar.slideIn .l1Menu {
@@ -73,13 +73,12 @@
 .pjsMenuLogo {
   display: flex;
   align-items: center;
-  justify-content: start;
   font-size: 22px;
   font-weight: 600;
   color: purple;
   margin: 20px 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid grey;
+  border-bottom: 0px solid grey;
   background-color: rgb(233, 233, 233);  
 }
 

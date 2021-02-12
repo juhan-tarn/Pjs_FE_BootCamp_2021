@@ -29,7 +29,7 @@ export const Sidebar = () => {
           <img src={PjsLogo} alt="Pjs Logo" className="pjslogo"/>
         </div> 
 
-        <HamburgerMenu
+        {/* <HamburgerMenu
             isOpen={!open}
             menuClicked={()=>handleHamburgerClick()}
             width={22}
@@ -39,7 +39,7 @@ export const Sidebar = () => {
             color='black'
             borderRadius={0}
             animationDuration={0.4}
-            className="menu" />
+            className="menu" /> */}
 
             <div className="l1Menu">
               <p><Link to="/">Home</Link></p>

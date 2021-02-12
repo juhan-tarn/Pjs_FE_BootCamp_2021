@@ -1,9 +1,16 @@
 import { useEffect } from "react";
 import {VoterViewRow} from './VoterViewRow';
 import {VoterEditRow} from './VoterEditRow';
+import { stubTrue } from "lodash";
 
-export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortField, 
-            onEditVoter, onCancelEditVoter, onSaveVoter, onRemoveVoter  }) => {
+export const VoterTable = ({voters, editVoterId, selectedVoters,
+            onRefreshVoters, onUpdateSortField, 
+            onEditVoter, onCancelEditVoter, 
+            onSaveVoter, onRemoveVoter, 
+            onSelectVoter, onDeSelectVoter, onSelectAllVoters,
+            onRemoveSelectedVoters }) => {
+
+
     const voterTableItems = voters.map(
         voter => {
             return ((voter.id === editVoterId) ? 
@@ -11,9 +18,12 @@ export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortFi
                             onSaveVoter={onSaveVoter}
                             onCancelEditVoter={onCancelEditVoter} 
                             /> : 
-                <VoterViewRow key={voter.id} voter={voter} editVoterId={editVoterId}
+                <VoterViewRow key={voter.id} voter={voter} selectedVoters={selectedVoters}
+                            editVoterId={editVoterId}
                             onEditVoter={onEditVoter}
                             onRemoveVoter={onRemoveVoter} 
+                            onSelectVoter={onSelectVoter}
+                            onDeSelectVoter={onDeSelectVoter}
                             />);
         }
     );
@@ -24,6 +34,7 @@ export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortFi
 
     return (
         <>
+            <form>
             <table>
                 <thead>
                     <tr>
@@ -42,7 +53,38 @@ export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortFi
                 <tbody>
                     {voterTableItems}
                 </tbody>
+                <tfoot>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        { (voters.length > 0) &&
+                            <button type="button"  onClick={() => {
+                                onSelectAllVoters(voters)
+                            }}>Select All Voters</button>
+                        }
+                        </td>
+                        <td>
+                        { (selectedVoters.length > 0) &&
+                        <button type="button"                             
+                            onClick={() => {
+                                onRemoveSelectedVoters(selectedVoters);
+                                console.log(selectedVoters)
+                            }}> Remove Voters
+                        </button>
+                        }
+                        </td>
+
+
+                    </tr>
+                </tfoot>
             </table>
+            </form>
+
         </>
     );
 };

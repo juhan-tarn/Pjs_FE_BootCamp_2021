@@ -1,4 +1,12 @@
-export const VoterViewRow = ({voter, onEditVoter: editVoter, onRemoveVoter: removeVoter}) => {
+export const VoterViewRow = ({
+    voter, 
+    selectedVoters,
+    onEditVoter: editVoter, 
+    onRemoveVoter: removeVoter,
+    onSelectVoter: selectVoter,
+    onDeSelectVoter: deselectVoter
+}) => {
+
     return (
         <tr>
             <td>{voter.id}</td>
@@ -23,6 +31,16 @@ export const VoterViewRow = ({voter, onEditVoter: editVoter, onRemoveVoter: remo
                 }}>
                     Delete
                 </button>
+            </td>
+            <td>
+                <input type="checkbox" value="deletedVoterId" 
+                    checked={ ( selectedVoters.indexOf(voter.id) >= 0) ? true : false  } 
+                    onChange={ (e)=> {
+                        console.log(e.target.checked);                        
+                        e.target.checked ? selectVoter(voter.id) : deselectVoter(voter.id);
+                        console.log(selectedVoters);
+                    }}
+                />
             </td>
         </tr>
     );

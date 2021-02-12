@@ -12,7 +12,6 @@ export const voterToolStore = createStore(
         sortField : sortFieldReducer,
         selctedVoters : deleteVotersReducer,
         elections: electionsReducer,
-        sortField: sortFieldReducer,
         questions:questionsReducer,
         resultId: resultsReducer
     }),

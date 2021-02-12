@@ -9,7 +9,6 @@ const getInitVoterForm = () => ({
   lastName: '',
   address: '',
   city: '',
-  address: '',
   zipcode: '',
   birthdate: '',
   email: '',

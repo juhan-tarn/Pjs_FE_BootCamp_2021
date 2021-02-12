@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import HamburgerMenu from "react-hamburger-menu"
 import { Link } from 'react-router-dom';
 
 import './Sidebar.css';
@@ -8,20 +7,7 @@ import PjsLogo from '../../images/pjs_v3.png'
 
 export const Sidebar = () => {
   const [open, setOpen] = useState(false);
-
-  function handleClick(id) { // todo - 
-  }
   
-  function handleHamburgerClick(){
-    setOpen(prevState => !prevState)
-  }
-
-  function handleClick() {
-    this.setState({
-        open: !this.state.open
-    });
-  }
-
     return (
       <div id="PJSSideBar" className={open ? 'slideIn' : 'slideOut'}>
 

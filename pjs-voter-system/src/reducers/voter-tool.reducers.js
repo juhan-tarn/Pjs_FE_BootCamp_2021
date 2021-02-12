@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 import {
     REFRESH_VOTERS_DONE_ACTION,
     SORT_VOTERS_ACTION,

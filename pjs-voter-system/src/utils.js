@@ -2,7 +2,6 @@ export const toString = (value) => {
     return isNaN(value) ? '' : String(value)
 }
 
-
 export const checkValidEmail = function(val) {
   if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(val)) {    
     return (true)

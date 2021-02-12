@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Router>
         <Layout>
-          <ToolHeader headerText="PJS Voter System" />
+          <ToolHeader headerText="PJS Voter System - Win together" />
           <aside><Sidebar></Sidebar></aside>
           <main>
             <Switch>

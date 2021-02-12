@@ -59,7 +59,7 @@
   ],
   "elections": [
     {
-      "id": "1",
+      "id": 1,
       "voterCount": 15,
       "questions": [
         {

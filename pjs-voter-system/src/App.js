@@ -11,6 +11,7 @@ import { Home } from './components/Home';
 
 import './App.css';
 import { AddVoterFormContainer } from './containers/AddVoterFormContainer';
+import { AddElectionFormContainer } from './containers/AddElectionFormContainer';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           <main>
             <Switch>
               <Provider store={voterToolStore}>
+                <Route path="/" exact >
+                  <AddElectionFormContainer />
+                </Route>
                 <Route path="/voter-table" exact>
                   <VoterTableContainer/>
                 </Route>

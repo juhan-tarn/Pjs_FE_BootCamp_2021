@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import {VoterViewRow} from './VoterViewRow';
 import {VoterEditRow} from './VoterEditRow';
-import { stubTrue } from "lodash";
 
 export const VoterTable = ({voters, editVoterId, selectedVoters,
             onRefreshVoters, onUpdateSortField, 

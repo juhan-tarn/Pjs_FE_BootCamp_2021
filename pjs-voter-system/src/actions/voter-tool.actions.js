@@ -95,7 +95,6 @@ export const saveVoter = (voter) => {
 };
 
 export const removeVoter = (voterId) => {
-    console.log("In removecar", voterId)
     return dispatch => {
       dispatch(createRemoveVoterRequestAction());
       return fetch('http://localhost:3060/voters/' + encodeURIComponent(voterId),
@@ -121,7 +120,6 @@ async function deleteMultiple(selectedVoters) {
 }
 
 export const removeSelectedVoters = (selectedVoters) => {
-    console.log("In removeSelectedVoters", selectedVoters)
     return dispatch => {
       dispatch(createRemoveVoterRequestAction());
       deleteMultiple(selectedVoters).then(() => dispatch(refreshVoters()))

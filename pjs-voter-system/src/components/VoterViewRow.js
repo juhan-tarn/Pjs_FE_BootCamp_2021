@@ -36,9 +36,7 @@ export const VoterViewRow = ({
                 <input type="checkbox" value="deletedVoterId" 
                     checked={ ( selectedVoters.indexOf(voter.id) >= 0) ? true : false  } 
                     onChange={ (e)=> {
-                        console.log(e.target.checked);                        
                         e.target.checked ? selectVoter(voter.id) : deselectVoter(voter.id);
-                        console.log(selectedVoters);
                     }}
                 />
             </td>

@@ -13,7 +13,7 @@ export const ElectionTable = ({
     });
     
     const resultItems = elections.map(election => {
-        return (resultId === election.id) ? <ResultsViewRow election={election} key={election.id}/> : <></> ; 
+        return (resultId === election.id) ? <ResultsViewRow election={election} key={election.id}/> : null ; 
     })
 
     useEffect(() => {

@@ -6,8 +6,6 @@ export const toString = (value) => {
 
 
 export const sortList = (list, sortField) => {
-    console.log(sortField, list);
-  
     return [...list].sort((a, b) => {
       const aValue = String(a[sortField]).toUpperCase();
       const bValue = String(b[sortField]).toUpperCase();

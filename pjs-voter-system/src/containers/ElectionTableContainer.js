@@ -17,6 +17,5 @@ export const ElectionTableContainer = () => {
         }, dispatch),
         [dispatch],
     );
-    console.log("result ID"+ resultId);
     return <ElectionTable elections={elections} resultId={resultId} {...actions} />;
 };

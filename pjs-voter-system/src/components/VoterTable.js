@@ -4,9 +4,6 @@ import {VoterEditRow} from './VoterEditRow';
 
 export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortField, 
             onEditVoter, onCancelEditVoter, onSaveVoter, onRemoveVoter  }) => {
-
-    console.log("test", editVoterId)
-
     const voterTableItems = voters.map(
         voter => {
             return ((voter.id === editVoterId) ? 

@@ -12,7 +12,6 @@ export const VoterViewRow = ({voter, onEditVoter: editVoter, onRemoveVoter: remo
             <td>{voter.phone}</td>
             <td>
                 <button type="button" onClick={() => {
-                    console.log('Edit single Voter');
                     editVoter(voter.id);
                 }}>
                     Edit
@@ -20,7 +19,6 @@ export const VoterViewRow = ({voter, onEditVoter: editVoter, onRemoveVoter: remo
             </td>
             <td>
                 <button type="button" onClick={() => {
-                    console.log('Delete single Voter');
                     removeVoter(voter.id);
                 }}>
                     Delete

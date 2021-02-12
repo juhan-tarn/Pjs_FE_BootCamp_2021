@@ -29,6 +29,7 @@ export const ElectionForm = ({questions, onAddQuestion, onAddElection}) => {
         }
 
         onAddElection(electionToAdd);
+        resetElectionForm();
     };
 
     return (

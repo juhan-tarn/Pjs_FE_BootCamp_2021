@@ -60,6 +60,7 @@
   "elections": [
     {
       "id": 1,
+      "electionName": "PJs Election",
       "voterCount": 15,
       "questions": [
         {

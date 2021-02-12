@@ -28,7 +28,55 @@ function App() {
                 <Route path="/register-voter" exact>
                   <AddVoterFormContainer/>
                 </Route>
+
+                <Route path="/ballots-table">
+                  Hello
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Ballot ID</th>
+                              <th>Status</th>
+                              <th>Voters Count</th>
+                              <th>Number of questons</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th>1</th>
+                              <th>Ready</th>
+                              <th>120</th>
+                              <th>5</th>
+                          </tr>
+                          <tr>
+                              <th>2</th>
+                              <th>Initial</th>
+                              <th>120</th>
+                              <th>5</th>
+                          </tr>
+                          
+                      </tbody>
+                  </table>
+                </Route>
+                
+
+                <Route path="/capture-vote">
+                  <div>
+                    <label htmlFor="userId-input">Userid</label>
+                    <input type="text" id="make-input" name="make" value=""/>
+
+                  </div>
+                  <div>
+                    <label htmlFor="userId-input">ElectionId</label>
+                    <select type="text" id="make-input" name="make" value=""/>
+
+                  </div>
+
+                  <button>Vote</button>
+                </Route>
+                                
               </Provider>
+
+
               <Route path="/" exact>
                 <Home/>
               </Route>

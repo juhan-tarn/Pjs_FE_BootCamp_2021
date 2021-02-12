@@ -46,7 +46,7 @@ export const Sidebar = () => {
             </div>
 
             <div className="l1Menu">
-              <p>Voter</p>
+              <p>Voters</p>
               <ul className="sidebarMenu">
                 <li className="sidebarMenuItem">
                   <p><Link to="/register-voter">Register Voter</Link></p>
@@ -58,8 +58,11 @@ export const Sidebar = () => {
             </div>
 
             <div className="l1Menu">
-              <p>Election</p>
-              <ul className="sidebarMenu">
+              <p>Elections</p>
+              <ul className="sidebarMenu">          
+                <li className="sidebarMenuItem">
+                  <p><Link to="/ballots-table">Ballots</Link></p>
+                </li>
                 <li className="sidebarMenuItem">
                   <p>Stats</p>
                 </li>
@@ -77,6 +80,15 @@ export const Sidebar = () => {
                 </li>
               </ul>
             </div>
+
+            <div className="l1Menu">
+              <p>Voting</p>
+              <ul className="sidebarMenu">              
+                <li className="sidebarMenuItem">
+                  <p><Link to="/capture-vote">Caste a vote</Link></p>
+                </li>
+              </ul>
+            </div>            
             
         </div>
     )

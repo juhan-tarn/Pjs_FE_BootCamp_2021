@@ -2,6 +2,7 @@ export const ADD_QUESTION_ACTION = 'ADD_QUESTION';
 export const ADD_ELECTIONS_REQUEST_ACTION = 'ADD_ELECTIONS_REQUEST';
 export const REFRESH_ELECTIONS_REQUEST_ACTION = 'REFRESH_ELECTIONS_REQUEST';
 export const REFRESH_ELECTIONS_DONE_ACTION = 'REFRESH_ELECTIONS_DONE';
+export const RESET_QUESTIONS_ACTION = 'RESET_QUESTIONS';
 
 export const createAddQuestionAction = (question) => ({
     type: ADD_QUESTION_ACTION,
@@ -11,6 +12,10 @@ export const createAddQuestionAction = (question) => ({
 export const createAddElectionRequestAction = () => ({
     type: ADD_ELECTIONS_REQUEST_ACTION,
 });
+
+export const createResetQuestionsAction = () => ({
+    type: RESET_QUESTIONS_ACTION
+,});
 
 export const addElection = election => {
     return dispatch => {

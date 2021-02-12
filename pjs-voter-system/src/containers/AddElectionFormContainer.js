@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addElection, createAddQuestionAction } from '../actions/election-tool.actions';
+import { addElection, createAddQuestionAction, createResetQuestionsAction } from '../actions/election-tool.actions';
 import { ElectionForm } from '../components/ElectionForm';
 
 
@@ -12,6 +12,7 @@ export const AddElectionFormContainer = () => {
         {
             onAddQuestion: createAddQuestionAction,
             onAddElection: addElection,
+            onResetQuestions: createResetQuestionsAction,
         },
         useDispatch(),
     );

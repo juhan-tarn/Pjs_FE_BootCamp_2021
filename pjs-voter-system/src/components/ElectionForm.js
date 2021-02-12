@@ -5,7 +5,7 @@ const getInitElectionForm = () => ({
     question: "",
 });
 
-export const ElectionForm = ({questions, onAddQuestion, onAddElection}) => {
+export const ElectionForm = ({questions, onAddQuestion, onAddElection, onResetQuestions}) => {
 
     const [electionForm, change, resetElectionForm] = useForm(getInitElectionForm());
     const displayQuestionItems = questions.map(question => {
@@ -30,6 +30,7 @@ export const ElectionForm = ({questions, onAddQuestion, onAddElection}) => {
 
         onAddElection(electionToAdd);
         resetElectionForm();
+        onResetQuestions();
     };
 
     return (

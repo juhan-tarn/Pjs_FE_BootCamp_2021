@@ -12,7 +12,6 @@ import {
 } from '../actions/voter-tool.actions';
 
 export const votersReducer = (voters=[], action) => {
-    console.log("Refresh voter reducer", action)
     switch (action.type) {
         case REFRESH_VOTERS_DONE_ACTION:
             return action.voters;
@@ -22,7 +21,6 @@ export const votersReducer = (voters=[], action) => {
 };
 
 export const editVoterReducer = ( editVoterId = -1, action ) => {    
-    console.log("Edit voter reducer", action)
     switch (action.type) {
 
       case EDIT_VOTER_ACTION:
@@ -37,7 +35,6 @@ export const editVoterReducer = ( editVoterId = -1, action ) => {
 }
 
 export const deleteVotersReducer = ( votersMarkedForDeletion = [], action) => {
-    console.log("In deleteVotersReducer", votersMarkedForDeletion, action)
     switch (action.type) {
         case SELECT_VOTER_ACTION:            
             return ([...votersMarkedForDeletion, action.voterId]);
@@ -45,10 +42,8 @@ export const deleteVotersReducer = ( votersMarkedForDeletion = [], action) => {
         case DESELECT_VOTER_ACTION:            
             const newList = [...votersMarkedForDeletion]
             const elemIdx = votersMarkedForDeletion.indexOf(action.voterId)
-            console.log("elemidx ", elemIdx);
             if (elemIdx >= 0) {
                 newList.splice(elemIdx, 1);
-                console.log("Updating saved list..", newList)
             }
             return (newList);
 

@@ -73,7 +73,6 @@ export const VoterTable = ({voters, editVoterId, selectedVoters,
                         <button type="button"                             
                             onClick={() => {
                                 onRemoveSelectedVoters(selectedVoters);
-                                console.log(selectedVoters)
                             }}> Remove Voters
                         </button>
                         }

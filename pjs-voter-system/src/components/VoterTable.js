@@ -1,12 +1,23 @@
 import { useEffect } from "react";
 import {VoterViewRow} from './VoterViewRow';
+import {VoterEditRow} from './VoterEditRow';
 
-export const VoterTable = ({voters, onRefreshVoters, onUpdateSortField}) => {
+export const VoterTable = ({voters, editVoterId, onRefreshVoters, onUpdateSortField, 
+            onEditVoter, onCancelEditVoter, onSaveVoter, onRemoveVoter  }) => {
 
+    console.log("test", editVoterId)
 
     const voterTableItems = voters.map(
         voter => {
-            return (voter.isEdit ? <VoterViewRow key={voter.id} voter={voter} /> : <VoterViewRow key={voter.id} voter={voter}/>);
+            return ((voter.id === editVoterId) ? 
+                <VoterEditRow key={voter.id} voter={voter}  
+                            onSaveVoter={onSaveVoter}
+                            onCancelEditVoter={onCancelEditVoter} 
+                            /> : 
+                <VoterViewRow key={voter.id} voter={voter} editVoterId={editVoterId}
+                            onEditVoter={onEditVoter}
+                            onRemoveVoter={onRemoveVoter} 
+                            />);
         }
     );
 

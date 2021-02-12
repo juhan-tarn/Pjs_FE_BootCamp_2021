@@ -7,6 +7,7 @@ import { Layout } from './components/ux/Layout'
 import { ToolHeader } from './components/ux/ToolHeader'
 import { ToolFooter } from './components/ux/ToolFooter'
 import { Sidebar } from './components/ux/Sidebar';
+import { Home } from './components/Home';
 
 import './App.css';
 import { AddVoterFormContainer } from './containers/AddVoterFormContainer';
@@ -17,16 +18,70 @@ function App() {
       <Router>
         <Layout>
           <ToolHeader headerText="PJS Voter System" />
-          <Provider store={voterToolStore}>
+          <aside><Sidebar></Sidebar></aside>
+          <main>
+            <Switch>
+              <Provider store={voterToolStore}>
+                <Route path="/voter-table" exact>
+                  <VoterTableContainer/>
+                </Route>
+                <Route path="/register-voter" exact>
+                  <AddVoterFormContainer/>
+                </Route>
 
-            <aside><Sidebar></Sidebar></aside>
-            <main>
-              <VoterTableContainer/>
-              <AddVoterFormContainer/>
-            </main>
+                <Route path="/ballots-table">
+                  Hello
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Ballot ID</th>
+                              <th>Status</th>
+                              <th>Voters Count</th>
+                              <th>Number of questons</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th>1</th>
+                              <th>Ready</th>
+                              <th>120</th>
+                              <th>5</th>
+                          </tr>
+                          <tr>
+                              <th>2</th>
+                              <th>Initial</th>
+                              <th>120</th>
+                              <th>5</th>
+                          </tr>
+                          
+                      </tbody>
+                  </table>
+                </Route>
+                
 
-          </Provider>
+                <Route path="/capture-vote">
+                  <div>
+                    <label htmlFor="userId-input">Userid</label>
+                    <input type="text" id="make-input" name="make" value=""/>
 
+                  </div>
+                  <div>
+                    <label htmlFor="userId-input">ElectionId</label>
+                    <select type="text" id="make-input" name="make" value=""/>
+
+                  </div>
+
+                  <button>Vote</button>
+                </Route>
+                                
+              </Provider>
+
+
+              <Route path="/" exact>
+                <Home/>
+              </Route>
+            </Switch>
+          </main>
           <ToolFooter footerText="PJS, Inc." />
         </Layout>
       </Router>

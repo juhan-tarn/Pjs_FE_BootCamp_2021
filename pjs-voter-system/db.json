@@ -25,6 +25,36 @@
       "email": null,
       "phone": null,
       "id": 2
+    },
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "address": "a",
+      "countyCity": "a",
+      "birthdate": "a",
+      "email": "a",
+      "phone": 92343434343,
+      "id": 3
+    },
+    {
+      "firstName": "Juhan",
+      "lastName": "Tarn ",
+      "address": "123 hello JS",
+      "countyCity": "San Diego",
+      "birthdate": "01/01/1990",
+      "email": "test@gmail.com",
+      "phone": 1233333,
+      "id": 4
+    },
+    {
+      "firstName": "Juhan",
+      "lastName": "Tarn",
+      "address": "123 Hello React",
+      "countyCity": "San Diego ",
+      "birthdate": "10/10/2010",
+      "email": "test@gmail.com",
+      "phone": "123-333-3211",
+      "id": 5
     }
   ],
   "elections": [

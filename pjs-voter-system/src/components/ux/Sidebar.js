@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import HamburgerMenu from "react-hamburger-menu"
+import { Link } from 'react-router-dom';
 
 import './Sidebar.css';
 
@@ -41,24 +42,27 @@ export const Sidebar = () => {
             className="menu" />
 
             <div className="l1Menu">
-              <p>Home</p>
+              <p><Link to="/">Home</Link></p>
             </div>
 
             <div className="l1Menu">
-              <p>Voter</p>
+              <p>Voters</p>
               <ul className="sidebarMenu">
                 <li className="sidebarMenuItem">
-                  <p>Register Voter</p>
+                  <p><Link to="/register-voter">Register Voter</Link></p>
                 </li>
                 <li className="sidebarMenuItem">
-                  <p>Add</p>
+                  <p><Link to="/voter-table">Voter List</Link></p>
                 </li>
               </ul>
             </div>
 
             <div className="l1Menu">
-              <p>Election</p>
-              <ul className="sidebarMenu">
+              <p>Elections</p>
+              <ul className="sidebarMenu">          
+                <li className="sidebarMenuItem">
+                  <p><Link to="/ballots-table">Ballots</Link></p>
+                </li>
                 <li className="sidebarMenuItem">
                   <p>Stats</p>
                 </li>
@@ -76,6 +80,15 @@ export const Sidebar = () => {
                 </li>
               </ul>
             </div>
+
+            <div className="l1Menu">
+              <p>Voting</p>
+              <ul className="sidebarMenu">              
+                <li className="sidebarMenuItem">
+                  <p><Link to="/capture-vote">Caste a vote</Link></p>
+                </li>
+              </ul>
+            </div>            
             
         </div>
     )
